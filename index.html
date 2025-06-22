@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Ricardo Solís Arias | Cybersecurity Engineer</title>
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent-color: hsl(0, 80%, 39%);
+      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      perspective: 800px;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* 3D animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #111 0%, #000 80%);
+      transform-origin: center;
+      animation: rotateBg 20s linear infinite;
+      z-index: -1;
+    }
+    @keyframes rotateBg {
+      from { transform: rotateX(60deg) rotateY(0deg); }
+      to   { transform: rotateX(60deg) rotateY(360deg); }
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    a:hover {
+      color: var(--text-color);
+      transform: translateY(-2px);
+    }
+    header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      animation: fadeInDown 0.8s ease forwards;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header nav a { margin-left: 1.5rem; font-weight: 500; }
+    .container {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    section:nth-of-type(odd) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(even) {
+      animation-delay: 0.6s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    #hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: textGlow 1.5s ease-in-out infinite alternate;
+    }
+   
+    #hero p { font-size: 1.2rem; color: #aaa; }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color);
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: expandLine 0.8s ease forwards;
+    }
+    @keyframes expandLine {
+      to { transform: scaleX(1); }
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .skills li, .projects li {
+      background: #111;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #222;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skills li:hover, .projects li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(139, 20, 20, 0.5);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #777;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      animation: fadeInUp 0.8s ease 0.8s forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logoweb.png" alt="Logo" style="height:50px; margin-right:1rem;">
+    <div><strong>José Ricardo Solís Arias</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="hero">
+      <h1>Cybersecurity Engineer</h1>
+      <p>Passionate about offensive security, network infrastructure & automation.</p>
+    </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a passionate Cybersecurity Engineering student specializing in offensive security, network defense, and embedded systems. 
+        With strong hands-on experience in scripting (Python, Bash), Linux administration, and IoT prototyping, 
+        I design secure, scalable solutions that bridge technology and real-world security needs. 
+        I thrive on solving complex challenges, building resilient architectures, and continuously learning to stay ahead in the fast-evolving cybersecurity landscape.
+      </p>
+      <p>
+        Based in Costa Rica, I’m focused on continuous learning and practical projects
+        that demonstrate real-world impact.
+      </p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li><strong>Offensive Security & Pentesting:</strong> Kali Linux, Nmap, Burp Suite, Metasploit, OSINT, Vulnerability Assessment, Exploitation Techniques</li>
+        <li><strong>Network Security & Administration:</strong> Cisco Packet Tracer, VLANs, Subnetting, Firewall Configuration, Router/Switch Management, VPNs</li>
+        <li><strong>Scripting & Automation:</strong> Python, Bash, Shell Scripting, Automation of Security Tasks</li>
+        <li><strong>Systems Administration:</strong> Linux (Debian/Ubuntu), Windows, Hardening, Patch Management, Virtualization (VMware, VirtualBox)</li>
+        <li><strong>Embedded Systems & IoT:</strong> Arduino, Sensors, Microcontrollers, IoT Security, Prototyping</li>
+        <li><strong>Cloud & Virtualization:</strong> AWS (basic), Docker, Virtual Machines</li>
+        <li><strong>Version Control & Collaboration:</strong> Git, GitHub, GitLab, Agile Tools (Jira, Trello)</li>
+        <li><strong>Security Best Practices:</strong> Risk Assessment, Incident Response, Security Policies, Documentation</li>
+        <li><strong>Soft Skills:</strong> Problem Solving, Analytical Thinking, Team Collaboration, Adaptability, Communication, Leadership</li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li><strong>Automated Recon Tool</strong><br>Bash & Nmap framework for rapid network scans.</li>
+        <li><strong>Kali Linux Audit Suite</strong><br>End-to-end pentesting in virtual labs.</li>
+        <li><strong>Secure IoT Prototype</strong><br>Arduino-based sensor integration with secure firmware.</li>
+        <li><strong>Backup Automation</strong><br>Bash scripts for incremental backups & notifications.</li>
+        <li><strong>Network Simulation</strong><br>Multi-VLAN design & ACLs in Packet Tracer.</li>
+        <li><strong>Linux Hardening Toolkit</strong><br>Collection of scripts for automated security hardening and compliance on Debian/Ubuntu systems.</li>
+        <li><strong>Password Cracking Lab</strong><br>Hands-on pentesting environment for testing and comparing password cracking tools and techniques.</li>
+        <li><strong>Phishing Awareness Simulator</strong><br>Custom tool to simulate and analyze phishing campaigns for end-user training.</li>
+        <li><strong>Incident Response Playbook</strong><br>Step-by-step response procedures and scripts for handling common security incidents.</li>
+        <li><strong>Vulnerability Reporting Platform</strong><br>Web application (Python/Flask) for managing and tracking discovered vulnerabilities in networks or systems.</li>
+        <li><strong>Wi-Fi Security Analyzer</strong><br>Python-based tool for detecting insecure wireless configurations and rogue access points.</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        📧 <a href="mailto:ricardo02solis@gmail.com">ricardo02solis@gmail.com</a><br>
+        📞 +506 8780 4141<br>
+        🌐 <a href="https://github.com/JANDER4824" target="_blank">GitHub</a> • <a href="https://www.linkedin.com/in/ricardo-solis-arias-3a382628a/" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+  </div>
+  <footer>
+    © 2025 José Ricardo Solís Arias — Driven by security & innovation
+  </footer>
+</body>
+</html>
+
+
